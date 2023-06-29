@@ -1,16 +1,42 @@
-package application;
+package application.impl;
+
+import application.Account;
+import application.Human;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.PostConstruct;
+import org.springframework.beans.factory.stereotype.Component;
 
 import java.math.BigDecimal;
 
 /**
  * @author Anton Salnikov
  */
-public class Human {
+@Component
+public class BankClient implements Human {
     private String name;
     private BigDecimal cash;
-    private BigDecimal moneyInBankAccount;
+    @Autowired
+    private Account bankAccount;
 
-    public void withdrawMoney() {
-
+    @PostConstruct
+    public void init() {
+        name = "Иванов Иван Иванович";
+        cash = new BigDecimal("500");
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void withdrawMoney(BigDecimal money) {
+        cash.add(bankAccount.withdrawAccountMoney(money));
+    }
+
+    @Override
+    public void putMoney(BigDecimal money) {
+        bankAccount.saveAccountMoney(money);
+    }
+
 }

@@ -1,4 +1,7 @@
-package org.springframework.context.event;/**
+package org.springframework.context.event;
+
+/**
  * @author Anton Salnikov
- */public class ContextClosedEvent {
+ */
+public class ContextClosedEvent {
 }

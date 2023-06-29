@@ -3,6 +3,6 @@ package application;
 /**
  * @author Anton Salnikov
  */
-public interface Mark {
+public interface Some {
     void doSome();
 }

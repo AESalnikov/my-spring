@@ -1,28 +1,15 @@
 package application;
 
-import application.ifc.Owner;
-import application.impl.RoomOwner;
-import org.springframework.beans.factory.BeanFactory;
+import application.impl.SomeImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.SpringApplication;
 
 /**
  * @author Anton Salnikov
  */
-public class Application {
+public class MyApp {
     public static void main(String[] args) {
-        // TODO: 28.06.2023 тут будет запускаться контекст
-        BeanFactory beanFactory = new BeanFactory();
-        beanFactory.initiateSpringBeans();
-        beanFactory.instantiate("application");
-        beanFactory.initializeBeanPostProcessors();
-        beanFactory.injectBeanFactory();
-        beanFactory.initializeBeans();
-
-//        Owner owner = beanFactory.getBean(Owner.class);
-//        Room room = beanFactory.getBean(Room.class);
-//        owner.putSomething();
-//        room.getRoomObjects();
-
-        Some s = beanFactory.getBean(Some.class);
-        s.doSome();
+        ApplicationContext context = SpringApplication.run("application");
+        context.close();
     }
 }

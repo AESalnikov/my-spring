@@ -1,15 +1,29 @@
-package application;
+package application.impl;
+
+import application.Account;
+import application.Bank;
+import application.Human;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.PostConstruct;
+import org.springframework.beans.factory.stereotype.Component;
 
 import java.math.BigDecimal;
 
 /**
  * @author Anton Salnikov
  */
-public class IronBank implements Bank{
+@Component
+public class IronBank implements Bank {
 
-    private BigDecimal total = new BigDecimal("1000000000000");
+    @Autowired
+    private Account bankAccount;
+    @Autowired
+    private Human bankClient;
+    private BigDecimal total;
 
-    public IronBank() {
+    @PostConstruct
+    public void init() {
+        total = new BigDecimal("1000000000000");
     }
 
     @Override
@@ -19,6 +33,7 @@ public class IronBank implements Bank{
 
     @Override
     public BigDecimal getMoney(BigDecimal money) {
-        return total.add(-money);
+        return total.subtract(money);
     }
+
 }

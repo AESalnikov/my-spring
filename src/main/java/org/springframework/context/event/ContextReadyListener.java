@@ -1,13 +1,10 @@
-package application.listener;
+package org.springframework.context.event;
 
-import org.springframework.beans.factory.stereotype.Component;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ApplicationReadyEvent;
 
 /**
  * @author Anton Salnikov
  */
-@Component
 public class ContextReadyListener implements ApplicationListener<ApplicationReadyEvent> {
 
     @Override

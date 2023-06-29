@@ -1,4 +1,8 @@
-package org.springframework.beans.factory;/**
+package org.springframework.beans.factory;
+
+/**
  * @author Anton Salnikov
- */public interface BeanFactoryAware {
+ */
+public interface BeanFactoryAware {
+    void setBeanFactory(BeanFactory beanFactory);
 }

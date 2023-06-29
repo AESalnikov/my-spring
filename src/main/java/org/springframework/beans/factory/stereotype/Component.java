@@ -1,4 +1,4 @@
-package org.springframework.beans.factory.annotation;
+package org.springframework.beans.factory.stereotype;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

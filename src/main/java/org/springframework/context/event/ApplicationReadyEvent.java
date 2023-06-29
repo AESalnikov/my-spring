@@ -1,4 +1,7 @@
-package org.springframework.context.event;/**
+package org.springframework.context.event;
+
+/**
  * @author Anton Salnikov
- */public class ApplicationReadyEvent {
+ */
+public class ApplicationReadyEvent {
 }

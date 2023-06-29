@@ -1,4 +1,11 @@
-package application;/**
+package application;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+/**
  * @author Anton Salnikov
- */public @interface ProxySome {
+ */
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ProxySome {
 }

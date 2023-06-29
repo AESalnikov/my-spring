@@ -1,7 +1,8 @@
-package org.springframework;
+package org.springframework.context;
 
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.ApplicationContext;
+
+import static org.springframework.util.Constant.BANNER;
 
 /**
  * @author Anton Salnikov
@@ -9,12 +10,14 @@ import org.springframework.context.ApplicationContext;
 public class SpringApplication {
 
     public static ApplicationContext run(String basePackage) {
+        System.out.println(BANNER);
         BeanFactory beanFactory = new BeanFactory(basePackage);
+        beanFactory.initializeApplicationListeners();
         beanFactory.initializeBeanPostProcessors();
         beanFactory.instantiate();
         beanFactory.injectBeanFactory();
         beanFactory.initializeBeans();
-        return new ApplicationContext(beanFactory);
+        return new ApplicationContext(beanFactory).ready();
     }
 
 }

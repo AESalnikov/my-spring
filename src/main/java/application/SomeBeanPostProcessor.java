@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * @author Anton Salnikov
  */
-public class SomeBPP implements BeanPostProcessor {
+public class SomeBeanPostProcessor implements BeanPostProcessor {
 
     private Map<String, Class<?>> map = new HashMap<>();
 

@@ -1,12 +1,13 @@
-package application;
+package application.impl;
 
-import org.springframework.beans.factory.stereotype.Component;
+import application.Some;
+import application.ProxySome;
 
 /**
  * @author Anton Salnikov
  */
 @ProxySome
-public class Some implements Mark {
+public class SomeImpl implements Some {
     @Override
     public void doSome() {
         System.out.println("working...");
