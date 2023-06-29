@@ -1,6 +1,5 @@
 package application;
 
-import application.impl.SomeImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.SpringApplication;
 

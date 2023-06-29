@@ -7,5 +7,6 @@ import java.math.BigDecimal;
  */
 public interface Bank {
     BigDecimal saveMoney(BigDecimal money);
+
     BigDecimal getMoney(BigDecimal money);
 }

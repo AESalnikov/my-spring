@@ -1,7 +1,7 @@
 package application.impl;
 
-import application.Some;
 import application.ProxySome;
+import application.Some;
 
 /**
  * @author Anton Salnikov

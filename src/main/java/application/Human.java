@@ -7,6 +7,8 @@ import java.math.BigDecimal;
  */
 public interface Human {
     String getName();
+
     void withdrawMoney(BigDecimal money);
+
     void putMoney(BigDecimal money);
 }

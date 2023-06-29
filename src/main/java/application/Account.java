@@ -7,8 +7,12 @@ import java.math.BigDecimal;
  */
 public interface Account {
     int getAccountNumber();
+
     void setAccountNumber(int accountNumber);
+
     BigDecimal withdrawAccountMoney(BigDecimal money);
+
     void saveAccountMoney(BigDecimal money);
+
     BigDecimal checkAccount();
 }
