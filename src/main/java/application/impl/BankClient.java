@@ -4,6 +4,7 @@ import application.Account;
 import application.Human;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -13,6 +14,7 @@ import java.math.BigDecimal;
  */
 @Component
 public class BankClient implements Human {
+    @Value("name")
     private String name;
     private BigDecimal cash;
     @Autowired
@@ -20,7 +22,6 @@ public class BankClient implements Human {
 
     @PostConstruct
     public void init() {
-        name = "Иванов Иван Иванович";
         cash = new BigDecimal("500");
     }
 
